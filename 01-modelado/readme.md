@@ -59,3 +59,62 @@ Descripcion: En esta tabla se almacenaran todos los cursos disponibles en la pla
   </tr>
   
 </table>
+
+### Tabla: CursoVideo
+Descripcion: Tabla intermedia que sirve para representar la relacion muchos a muchos entre las tablas Curso y Video. Se modelo de esta forma porque se considera que un curso puede estar compuesto de varios videos, a su vez un video puede formar parte de varios cursos. Ejemplo: Video sobre el tema "Currificacion en Javascript" podria aparecer en un curso de Javascript como en uno de React.  
+
+<table>
+  <thead>
+    <td>Llave Primaria</td>
+    <td>Nombre Campo</td>
+    <td>Tipo Dato</td>
+    <td>Descripcion</td>
+    <td>Llave Foranea</td>
+    <td>Tabla Relacionada</td>
+  </thead>
+  <tr>
+    <td>Si</td>
+    <td>CursoId</td>
+    <td>Integer</td>
+    <td>Identificador del curso</td>
+    <td>Si</td>
+    <td>Curso</td>
+  </tr>
+  <tr>
+    <td>Si</td>
+    <td>VideoId</td>
+    <td>Integer</td>
+    <td>Identificador del video</td>
+    <td>Si</td>
+    <td>Video</td>
+  </tr>
+</table>
+
+### Tabla: CursoArticulo
+Descripcion: Tabla intermedia que sirve para representar la relacion muchos a muchos entre las tablas Curso y Articulo. Se modelo de esta forma porque se considera que un curso puede estar compuesto de varios articulos, a su vez un articulo puede formar parte de varios cursos. 
+<table>
+  <thead>
+    <td>Llave Primaria</td>
+    <td>Nombre Campo</td>
+    <td>Tipo Dato</td>
+    <td>Descripcion</td>
+    <td>Llave Foranea</td>
+    <td>Tabla Relacionada</td>
+  </thead>
+  <tr>
+    <td>Si</td>
+    <td>CursoId</td>
+    <td>Integer</td>
+    <td>Identificador del curso</td>
+    <td>Si</td>
+    <td>Curso</td>
+  </tr>
+  <tr>
+    <td>Si</td>
+    <td>ArticuloId</td>
+    <td>Integer</td>
+    <td>Identificador del articulo</td>
+    <td>Si</td>
+    <td>Articulo</td>
+  </tr>
+</table>
