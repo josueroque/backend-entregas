@@ -49,5 +49,13 @@ Descripcion: En esta tabla se almacenaran todos los cursos disponibles en la pla
     <td>Si</td>
     <td>Area</td>
   </tr>
+    <tr>
+    <td>No</td>
+    <td>Publico</td>
+    <td>Boolean</td>
+    <td>Determina si el curso es de acceso privado o publico</td>
+    <td>No</td>
+    <td></td>
+  </tr>
   
 </table>
