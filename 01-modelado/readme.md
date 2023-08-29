@@ -118,3 +118,77 @@ Descripcion: Tabla intermedia que sirve para representar la relacion muchos a mu
     <td>Articulo</td>
   </tr>
 </table>
+
+### Tabla: Video
+Descripcion: Tabla que almacenara todos los videos que componen los diferentes cursos. Como se puede apreciar en el diagrama un video podria pertenecer a uno o mas cursos.  
+<table>
+  <thead>
+    <td>Llave Primaria</td>
+    <td>Nombre Campo</td>
+    <td>Tipo Dato</td>
+    <td>Descripcion</td>
+    <td>Llave Foranea</td>
+    <td>Tabla Relacionada</td>
+  </thead>
+  <tr>
+    <td>Si</td>
+    <td>VideoId</td>
+    <td>Integer</td>
+    <td>Identificador del video</td>
+    <td>No</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>No</td>
+    <td>Nombre</td>
+    <td>Varchar</td>
+    <td>Nombre del video</td>
+    <td>No</td>
+    <td></td>
+  </tr>
+    <tr>
+    <td>No</td>
+    <td>Descipcion</td>
+    <td>Varchar</td>
+    <td>Descripcion del video</td>
+    <td>No</td>
+    <td></td>
+  </tr>
+</table>
+
+### Tabla: Articulo
+Descripcion: Tabla que almacenara todos los articulos que componen los diferentes cursos. Como se puede apreciar en el diagrama un articulos podria pertenecer a uno o mas cursos.  
+<table>
+  <thead>
+    <td>Llave Primaria</td>
+    <td>Nombre Campo</td>
+    <td>Tipo Dato</td>
+    <td>Descripcion</td>
+    <td>Llave Foranea</td>
+    <td>Tabla Relacionada</td>
+  </thead>
+  <tr>
+    <td>Si</td>
+    <td>ArticuloId</td>
+    <td>Integer</td>
+    <td>Identificador del articulo</td>
+    <td>No</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>No</td>
+    <td>Nombre</td>
+    <td>Varchar</td>
+    <td>Nombre del articulo</td>
+    <td>No</td>
+    <td></td>
+  </tr>
+    <tr>
+    <td>No</td>
+    <td>Descipcion</td>
+    <td>Varchar</td>
+    <td>Descripcion del articulo</td>
+    <td>No</td>
+    <td></td>
+  </tr>
+</table>
