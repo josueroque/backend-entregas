@@ -3,10 +3,9 @@
 ## Diagrama Entidad Relacion
 
 <img src="/01-modelado/images/diagram.png" alt="MarineGEO circle logo"/>
-##
 
-##Diccionario de Datos
-###Tabla: Curso
+## Diccionario de Datos
+### Tabla: Curso
 <table>
   <thead>
     <td>Llave Primaria </td>
@@ -25,11 +24,3 @@
     <td></td>
   </tr>
 </table>
-
-###
-##
-
-
-
-
-#
