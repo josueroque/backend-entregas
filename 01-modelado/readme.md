@@ -6,6 +6,8 @@
 
 ## Diccionario de Datos
 ### Tabla: Curso
+Descripcion: En esta tabla se almacenaran todos los cursos disponibles en la plataforma. Estara relacionada con la tabla Area por medio del campo AreaId, lo que determinara la categoria a la que pertenece el curso. El campo FechaPublicacion permitira cumplir con el requerimiento de poder consultar y mostrar los cursos en base a su fecha de publicacion.
+
 <table>
   <thead>
     <td>Llave Primaria </td>
