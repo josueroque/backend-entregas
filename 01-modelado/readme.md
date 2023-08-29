@@ -192,3 +192,48 @@ Descripcion: Tabla que almacenara todos los articulos que componen los diferente
     <td></td>
   </tr>
 </table>
+
+### Tabla: Usuario
+Descripcion: Tabla que almacenara todos los usuarios registrados en la plataforma.  
+<table>
+  <thead>
+    <td>Llave Primaria</td>
+    <td>Nombre Campo</td>
+    <td>Tipo Dato</td>
+    <td>Descripcion</td>
+    <td>Llave Foranea</td>
+    <td>Tabla Relacionada</td>
+  </thead>
+  <tr>
+    <td>Si</td>
+    <td>UsuarioId</td>
+    <td>Integer</td>
+    <td>Identificador del usuario</td>
+    <td>No</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>No</td>
+    <td>Nombre</td>
+    <td>Varchar</td>
+    <td>Nombre del usuario</td>
+    <td>No</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>No</td>
+    <td>Email</td>
+    <td>Varchar</td>
+    <td>Direccion de correo electronico</td>
+    <td>No</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>No</td>
+    <td>Activo</td>
+    <td>Boolean</td>
+    <td>Determina si el usuario esta activo</td>
+    <td>No</td>
+    <td></td>
+  </tr>
+</table>
