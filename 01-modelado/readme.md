@@ -25,4 +25,29 @@ Descripcion: En esta tabla se almacenaran todos los cursos disponibles en la pla
     <td>No</td>
     <td></td>
   </tr>
+  <tr>
+    <td>No</td>
+    <td>Nombre</td>
+    <td>Varchar</td>
+    <td>Nombre del curso</td>
+    <td>No</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>No</td>
+    <td>FechaPublicacion</td>
+    <td>Datetime</td>
+    <td>Fecha de publicacion del curso</td>
+    <td>No</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>No</td>
+    <td>AreaId</td>
+    <td>Integer</td>
+    <td>Codigo del area a la que pertenece el curso</td>
+    <td>Si</td>
+    <td>Area</td>
+  </tr>
+  
 </table>
