@@ -193,6 +193,43 @@ Descripcion: Tabla que almacenara todos los articulos que componen los diferente
   </tr>
 </table>
 
+### Tabla: Autor
+Descripcion: Tabla que almacenara todos los autores que estaran creando los diferentes cursos. Como se puede apreciar en el diagrama un autor podria crear uno o mas cursos.  
+<table>
+  <thead>
+    <td>Llave Primaria</td>
+    <td>Nombre Campo</td>
+    <td>Tipo Dato</td>
+    <td>Descripcion</td>
+    <td>Llave Foranea</td>
+    <td>Tabla Relacionada</td>
+  </thead>
+  <tr>
+    <td>Si</td>
+    <td>AutorId</td>
+    <td>Integer</td>
+    <td>Identificador del autor</td>
+    <td>No</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>No</td>
+    <td>Nombre</td>
+    <td>Varchar</td>
+    <td>Nombre del autor</td>
+    <td>No</td>
+    <td></td>
+  </tr>
+    <tr>
+    <td>No</td>
+    <td>Email</td>
+    <td>Varchar</td>
+    <td>Direccion de correo electronico del autor</td>
+    <td>No</td>
+    <td></td>
+  </tr>
+</table>
+
 ### Tabla: Usuario
 Descripcion: Tabla que almacenara todos los usuarios registrados en la plataforma.  
 <table>
@@ -233,6 +270,88 @@ Descripcion: Tabla que almacenara todos los usuarios registrados en la plataform
     <td>Activo</td>
     <td>Boolean</td>
     <td>Determina si el usuario esta activo</td>
+    <td>No</td>
+    <td></td>
+  </tr>
+</table>
+
+### Tabla: Suscripcion
+Descripcion: Tabla que almacenara todos las suscripciones de los usuarios del sistema. Un usuario puede poseer varias suscripciones puesto que estas tienen fecha de vencimiento, si el usuario desea volver a estar suscrito despues de haber tenido anteriormente una suscripcion, se generarara un nuevo registro para ello.  
+<table>
+  <thead>
+    <td>Llave Primaria</td>
+    <td>Nombre Campo</td>
+    <td>Tipo Dato</td>
+    <td>Descripcion</td>
+    <td>Llave Foranea</td>
+    <td>Tabla Relacionada</td>
+  </thead>
+  <tr>
+    <td>Si</td>
+    <td>SuscripcionId</td>
+    <td>Integer</td>
+    <td>Identificador de la suscripcion</td>
+    <td>No</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>No</td>
+    <td>UsuarioId</td>
+    <td>Integer</td>
+    <td>Identificador del usuario</td>
+    <td>Si</td>
+    <td>Usuario</td>
+  </tr>
+  <tr>
+    <td>No</td>
+    <td>FechaInicio</td>
+    <td>Datetime</td>
+    <td>Fecha de inicio de la suscripcion</td>
+    <td>No</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>No</td>
+    <td>FechaFin</td>
+    <td>Datetime</td>
+    <td>Fecha de fin de la suscripcion</td>
+    <td>No</td>
+    <td></td>
+  </tr>
+</table>
+
+### Tabla: Area
+Descripcion: Tabla que almacenara todas los areas a las que podrian pertener los diferentes cursos. Los cursos solo pueden pertenecer a un area, sin embargo cada a area puede haber derivado a su vez de otras areas, esto se ve reflejado en el diagrama a travez de una <a href="https://learn.microsoft.com/es-es/sql/master-data-services/recursive-hierarchies-master-data-services?view=sql-server-ver16">relacion recursiva</a> dentro de la misma tabla.   
+<table>
+  <thead>
+    <td>Llave Primaria</td>
+    <td>Nombre Campo</td>
+    <td>Tipo Dato</td>
+    <td>Descripcion</td>
+    <td>Llave Foranea</td>
+    <td>Tabla Relacionada</td>
+  </thead>
+  <tr>
+    <td>Si</td>
+    <td>AutorId</td>
+    <td>Integer</td>
+    <td>Identificador del autor</td>
+    <td>No</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>No</td>
+    <td>Nombre</td>
+    <td>Varchar</td>
+    <td>Nombre del autor</td>
+    <td>No</td>
+    <td></td>
+  </tr>
+    <tr>
+    <td>No</td>
+    <td>Email</td>
+    <td>Varchar</td>
+    <td>Direccion de correo electronico del autor</td>
     <td>No</td>
     <td></td>
   </tr>
