@@ -333,9 +333,9 @@ Descripcion: Tabla que almacenara todas los areas a las que podrian pertener los
   </thead>
   <tr>
     <td>Si</td>
-    <td>AutorId</td>
+    <td>AreaId</td>
     <td>Integer</td>
-    <td>Identificador del autor</td>
+    <td>Identificador del area</td>
     <td>No</td>
     <td></td>
   </tr>
@@ -343,15 +343,15 @@ Descripcion: Tabla que almacenara todas los areas a las que podrian pertener los
     <td>No</td>
     <td>Nombre</td>
     <td>Varchar</td>
-    <td>Nombre del autor</td>
+    <td>Nombre del area</td>
     <td>No</td>
     <td></td>
   </tr>
     <tr>
     <td>No</td>
-    <td>Email</td>
+    <td>AreaSuperiorId</td>
     <td>Varchar</td>
-    <td>Direccion de correo electronico del autor</td>
+    <td>Area de la que deriva, si fuera el caso</td>
     <td>No</td>
     <td></td>
   </tr>
