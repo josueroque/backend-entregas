@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C1971A21-6993-4B4F-955E-19363170FBCF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookManager.Domain", "src\BookManager.Domain\BookManager.Domain.csproj", "{31642ADE-EF2B-43A8-B09D-FD01F2A1221C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookManager.Application", "src\BookManager.Application\BookManager.Application.csproj", "{6E367CC3-EBE6-4494-8AA3-BE732929E409}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookManager", "src\BookManager\BookManager.csproj", "{6D2C3CA0-0E41-46DE-898C-8B8D103BF58F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{B33948D5-C9CF-40D0-A959-27355F52A01D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookManager.Domain.UnitTests", "test\BookManager.Domain.UnitTests\BookManager.Domain.UnitTests.csproj", "{DCF08520-A403-4B0A-838F-A12F3251542F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookManager.Application.UnitTests", "test\BookManager.Application.UnitTests\BookManager.Application.UnitTests.csproj", "{BEE98050-F747-496D-9D9C-5B48D581B92F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookManager.FunctionalTests", "test\BookManager.FunctionalTests\BookManager.FunctionalTests.csproj", "{C6BA348E-328E-4262-804E-C79675790F6D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{31642ADE-EF2B-43A8-B09D-FD01F2A1221C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31642ADE-EF2B-43A8-B09D-FD01F2A1221C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31642ADE-EF2B-43A8-B09D-FD01F2A1221C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31642ADE-EF2B-43A8-B09D-FD01F2A1221C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E367CC3-EBE6-4494-8AA3-BE732929E409}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E367CC3-EBE6-4494-8AA3-BE732929E409}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E367CC3-EBE6-4494-8AA3-BE732929E409}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E367CC3-EBE6-4494-8AA3-BE732929E409}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D2C3CA0-0E41-46DE-898C-8B8D103BF58F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D2C3CA0-0E41-46DE-898C-8B8D103BF58F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D2C3CA0-0E41-46DE-898C-8B8D103BF58F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D2C3CA0-0E41-46DE-898C-8B8D103BF58F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCF08520-A403-4B0A-838F-A12F3251542F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCF08520-A403-4B0A-838F-A12F3251542F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCF08520-A403-4B0A-838F-A12F3251542F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCF08520-A403-4B0A-838F-A12F3251542F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEE98050-F747-496D-9D9C-5B48D581B92F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEE98050-F747-496D-9D9C-5B48D581B92F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEE98050-F747-496D-9D9C-5B48D581B92F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEE98050-F747-496D-9D9C-5B48D581B92F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6BA348E-328E-4262-804E-C79675790F6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6BA348E-328E-4262-804E-C79675790F6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6BA348E-328E-4262-804E-C79675790F6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6BA348E-328E-4262-804E-C79675790F6D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{31642ADE-EF2B-43A8-B09D-FD01F2A1221C} = {C1971A21-6993-4B4F-955E-19363170FBCF}
+		{6E367CC3-EBE6-4494-8AA3-BE732929E409} = {C1971A21-6993-4B4F-955E-19363170FBCF}
+		{6D2C3CA0-0E41-46DE-898C-8B8D103BF58F} = {C1971A21-6993-4B4F-955E-19363170FBCF}
+		{DCF08520-A403-4B0A-838F-A12F3251542F} = {B33948D5-C9CF-40D0-A959-27355F52A01D}
+		{BEE98050-F747-496D-9D9C-5B48D581B92F} = {B33948D5-C9CF-40D0-A959-27355F52A01D}
+		{C6BA348E-328E-4262-804E-C79675790F6D} = {B33948D5-C9CF-40D0-A959-27355F52A01D}
+	EndGlobalSection
+EndGlobal
