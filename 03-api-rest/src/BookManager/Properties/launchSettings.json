@@ -1,4 +1,5 @@
 ﻿{
+
   "profiles": {
     "http": {
       "commandName": "Project",
@@ -8,5 +9,6 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
-    }
+    }      
+  }
 }
