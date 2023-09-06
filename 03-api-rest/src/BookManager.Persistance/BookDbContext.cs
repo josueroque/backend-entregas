@@ -1,9 +1,10 @@
-﻿using BookManager.Domain;
+﻿using BookManager.Application;
+using BookManager.Domain;
 using Microsoft.EntityFrameworkCore;
 
 namespace BookManager.Persistance
 {
-    public class BookDbContext:DbContext
+    public class BookDbContext:DbContext, IBookDbContext
     {
         public BookDbContext(DbContextOptions<BookDbContext> options)
         : base(options)
@@ -12,6 +13,11 @@ namespace BookManager.Persistance
         
         public DbSet<AuthorEntity> Authors { get; set; }
         public DbSet<BookEntity> Books { get; set; }
+
+        public Task<int> SaveChangesAsync()
+        {
+            return base.SaveChangesAsync();
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

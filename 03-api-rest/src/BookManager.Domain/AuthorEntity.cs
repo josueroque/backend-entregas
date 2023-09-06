@@ -18,7 +18,7 @@ namespace BookManager.Domain
         [MaxLength(80)]
         public string LastName { get; set; } = string.Empty;
         public DateTime Birth { get; set; } = new DateTime();
-        [MaxLength(4)]
+        [MaxLength(2)]
         public string CountryCode { get; set; } = string.Empty;
         public List<BookEntity> Books { get; set; } = new List<BookEntity>();
 

@@ -1,4 +1,5 @@
-﻿using BookManager.Persistance;
+﻿using BookManager.Application;
+using BookManager.Persistance;
 using Microsoft.EntityFrameworkCore;
 
 namespace BookManager;
@@ -17,13 +18,13 @@ public class Startup
         var booksConnectionString =
             _configuration.GetValue<string>("ConnectionStrings:BooksDatabase");
 
-
-
         services
             .AddDbContext<BookDbContext>(options =>
             {
                 options.UseSqlServer(booksConnectionString);
             })
+            .AddTransient<AuthorCommandService>()
+            .AddScoped<IBookDbContext, BookDbContext>()
             .AddControllers();
     }
 
