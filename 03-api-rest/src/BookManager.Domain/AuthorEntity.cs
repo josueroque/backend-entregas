@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BookManager.Domain
 {
@@ -20,7 +16,7 @@ namespace BookManager.Domain
         public DateTime Birth { get; set; } = new DateTime();
         [MaxLength(2)]
         public string CountryCode { get; set; } = string.Empty;
-        public List<BookEntity> Books { get; set; } = new List<BookEntity>();
+        public List<BookEntity> Books { get; set; } = null!;
 
     }
 }

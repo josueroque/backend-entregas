@@ -24,6 +24,7 @@ public class Startup
                 options.UseSqlServer(booksConnectionString);
             })
             .AddTransient<AuthorCommandService>()
+            .AddTransient<BookCommandService>()
             .AddScoped<IBookDbContext, BookDbContext>()
             .AddControllers();
     }

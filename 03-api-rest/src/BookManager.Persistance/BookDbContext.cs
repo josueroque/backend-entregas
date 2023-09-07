@@ -33,7 +33,6 @@ namespace BookManager.Persistance
                 .WithMany(a => a.Books)
                 .HasForeignKey(b => b.AuthorId);
 
-
         }
 
     }

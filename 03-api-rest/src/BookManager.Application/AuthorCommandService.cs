@@ -17,7 +17,7 @@ namespace BookManager.Application
             _bookDbContext = bookDbContext;
         }
 
-        public async Task SaveChangesAsync(Author author)
+        public async Task SaveChangesAsync(AuthorModel author)
         {
             var authorEntity = new AuthorEntity
 

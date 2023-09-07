@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace BookManager.Domain
 {
@@ -16,9 +13,9 @@ namespace BookManager.Domain
         [Required]
         public DateTime PublishedOn { get; set; } = new DateTime();
         public string Description { get; set; } = string.Empty;
+        public int AuthorId { get; set; }
+        public AuthorEntity Author { get; set; } 
 
-        public AuthorEntity Author { get; set; } = new();
-        public int AuthorId { get; set; } 
 
     }
 }

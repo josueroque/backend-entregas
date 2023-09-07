@@ -11,16 +11,23 @@ public class AuthorController:ControllerBase
     {
         _authorCommandService = authorCommandService;
     }
-
+        
     [HttpPost]
-    public async Task<IActionResult> SaveChangesAsync ([FromBody]Author author)
+    public async Task<IActionResult> SaveChangesAsync ([FromBody]AuthorModel author)
     {
+        try 
+        { 
         if (author.FirstName == null || author.LastName == null || author.CountryCode == null) 
         {
             return BadRequest("Favor inserte todos los datos obligatorios");
         }
         await _authorCommandService.SaveChangesAsync(author);
         return Ok();
+        }
+        catch (Exception ex)
+        {
+            return BadRequest($"Error al guardar!");
+        }
     }
 
 }
