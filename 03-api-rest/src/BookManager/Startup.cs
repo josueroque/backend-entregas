@@ -25,6 +25,7 @@ public class Startup
             })
             .AddTransient<AuthorCommandService>()
             .AddTransient<BookCommandService>()
+            .AddTransient<BookQueryService>()
             .AddScoped<IBookDbContext, BookDbContext>()
             .AddControllers();
     }

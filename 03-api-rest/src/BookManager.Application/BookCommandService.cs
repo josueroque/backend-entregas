@@ -21,7 +21,7 @@ namespace BookManager.Application
                 Title = book.Title,
                 Description = book.Description,
                 PublishedOn = book.PublishedOn,
-                AuthorId = book.AuthorId,
+                AuthorId = book.AuthorId ,
 
             };
 

@@ -6,10 +6,13 @@ namespace BookManager.Controllers;
 [Route("api/[controller]")]
 public class BookController : ControllerBase
 {
-    private BookCommandService _bookCommandService;
-    public BookController(BookCommandService bookCommandService)
+    private readonly BookCommandService _bookCommandService;
+    private readonly BookQueryService _bookQueryService;
+
+    public BookController(BookCommandService bookCommandService, BookQueryService bookQueryService)
     {
         _bookCommandService = bookCommandService;
+        _bookQueryService = bookQueryService;
     }
 
     [HttpPost]
@@ -51,5 +54,13 @@ public class BookController : ControllerBase
             return BadRequest($"Error al guardar!");
         }
     }
+
+    [HttpGet]
+    public async Task <IEnumerable<BookQueryModel>> GetAllBooksAsync()
+    {
+        var books = await _bookQueryService.GetAllBooksAsync();
+        return books;
+    }
+
 
 }
