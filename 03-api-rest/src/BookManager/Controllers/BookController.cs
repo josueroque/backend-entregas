@@ -32,4 +32,24 @@ public class BookController : ControllerBase
         }
     }
 
+    [HttpPut("{id:int}")]
+    public async Task <IActionResult> SaveChangesAsync(int id,[FromBody] BookModel book)
+    {
+        try
+        {
+            if (string.IsNullOrEmpty(book.Title) || string.IsNullOrEmpty(book.Description))
+            {
+                return BadRequest("Favor inserte todos los datos obligatorios");
+            }
+
+            await _bookCommandService.SaveChangesAsync(id, book);
+
+            return Ok();
+        }
+        catch (Exception ex)
+        {
+            return BadRequest($"Error al guardar!");
+        }
+    }
+
 }
