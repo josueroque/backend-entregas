@@ -1,6 +1,7 @@
 ﻿using BookManager.Application;
 using BookManager.Persistance;
 using Microsoft.EntityFrameworkCore;
+using BookManager.Extensions;
 
 namespace BookManager;
 
@@ -27,6 +28,7 @@ public class Startup
             .AddTransient<BookCommandService>()
             .AddTransient<BookQueryService>()
             .AddScoped<IBookDbContext, BookDbContext>()
+            .AddOpenApi()
             .AddControllers();
     }
 
@@ -34,6 +36,7 @@ public class Startup
     public void Configure(IApplicationBuilder app)
     {
         app.UseRouting();
+        app.UseOpenApi();
 
         app.UseEndpoints(endpoints =>
         {
