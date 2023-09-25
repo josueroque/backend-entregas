@@ -17,7 +17,7 @@ namespace BookManager.Application
             _bookDbContext = bookDbContext;
         }
 
-        public async Task SaveChangesAsync(AuthorModel author)
+        public async Task<int> SaveChangesAsync(AuthorModel author)
         {
             var authorEntity = new AuthorEntity
 
@@ -31,6 +31,8 @@ namespace BookManager.Application
             _bookDbContext.Authors.Add(authorEntity);
             
             await _bookDbContext.SaveChangesAsync();
+           
+            return authorEntity.Id;
 
         }
 

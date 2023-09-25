@@ -4,14 +4,30 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BookManager.Controllers;
 [Route("api/[controller]")]
-public class AuthorController:ControllerBase
+public class AuthorController : ControllerBase
 {
     private AuthorCommandService _authorCommandService;
-    public AuthorController(AuthorCommandService authorCommandService)
+    private AuthorQueryService _authorQueryService;
+
+    public AuthorController(AuthorCommandService authorCommandService, AuthorQueryService authorQueryService)
     {
         _authorCommandService = authorCommandService;
+        _authorQueryService = authorQueryService;
     }
-        
+
+    [HttpGet("{id:int}")]
+    public async Task<IActionResult> GetAuthorAsync(int id)
+    {
+        var author = await _authorQueryService.GetAuthorAsync(id);
+
+        if (string.IsNullOrEmpty(author.FirstName))
+        {
+            return NotFound();
+        }
+
+        return Ok(author);
+    }
+
     [HttpPost]
     public async Task<IActionResult> SaveChangesAsync ([FromBody]AuthorModel author)
     {
@@ -21,8 +37,10 @@ public class AuthorController:ControllerBase
         {
             return BadRequest("Favor inserte todos los datos obligatorios");
         }
-        await _authorCommandService.SaveChangesAsync(author);
-        return Ok();
+        
+            var id = await _authorCommandService.SaveChangesAsync(author);
+        
+            return Ok(id);
         }
         catch (Exception ex)
         {
