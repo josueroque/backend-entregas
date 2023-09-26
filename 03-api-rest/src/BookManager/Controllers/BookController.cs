@@ -56,9 +56,10 @@ public class BookController : ControllerBase
     }
 
     [HttpGet]
-    public async Task <IEnumerable<BookQueryModel>> GetAllBooksAsync()
+    public async Task <IEnumerable<BookQueryModel>> GetAllBooksAsync([FromQuery] BookParameters bookParameters)
     {
-        var books = await _bookQueryService.GetAllBooksAsync();
+
+        var books = await _bookQueryService.GetAllBooksAsync(bookParameters);
         return books;
     }
 
