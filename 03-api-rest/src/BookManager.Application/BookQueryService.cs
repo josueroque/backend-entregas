@@ -25,6 +25,11 @@ namespace BookManager.Application
                 books = books.Where(b => b.Title == bookParameters.Title).ToList();
             }
 
+            if (bookParameters?.Author != null)
+            {
+                books = books.Where(b => b.AuthorName == bookParameters.Author).ToList();
+            }
+
             return books;
         }
 
