@@ -17,7 +17,7 @@ namespace BookManager.Application
         {
             var books = await _bookDbContext
                 .Books
-                .Select(b => new BookQueryModel { Id = b.Id, Title = b.Title, Description = b.Description, PublishedOn = b.PublishedOn.ToString(("s")), AuthorName = $"{b.Author.Name} {b.Author.LastName}"})
+                .Select(b => new BookQueryModel {  Title = b.Title, Description = b.Description, PublishedOn = b.PublishedOn.ToString(("s")), AuthorName = $"{b.Author.Name} {b.Author.LastName}"})
                 .ToListAsync();
 
             return books;

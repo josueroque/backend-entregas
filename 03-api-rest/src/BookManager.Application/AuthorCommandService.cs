@@ -1,10 +1,5 @@
 ﻿using BookManager.Application.Models;
 using BookManager.Domain;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BookManager.Application
 {
@@ -28,10 +23,33 @@ namespace BookManager.Application
                 CountryCode = author.CountryCode 
             };
 
+
             _bookDbContext.Authors.Add(authorEntity);
-            
+
             await _bookDbContext.SaveChangesAsync();
-           
+
+            var books = new List<BookEntity>();
+
+            if (author.Books != null)
+            {
+                foreach (var book in author.Books)
+                {
+                    if (author != null)
+                    {
+                        books.Add(new BookEntity{ AuthorId = authorEntity.Id, Title = book.Title, Description = book.Description, PublishedOn = book.PublishedOn });
+                    }
+                }
+
+                foreach (var book in books)
+                {
+                    _bookDbContext.Books.Add(book);
+                }
+
+                await _bookDbContext.SaveChangesAsync();
+
+            }
+
+
             return authorEntity.Id;
 
         }
