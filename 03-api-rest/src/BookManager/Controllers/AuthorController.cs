@@ -1,9 +1,12 @@
 ﻿using BookManager.Application;
 using BookManager.Application.Models;
+using BookManager.Filters;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BookManager.Controllers;
 [Route("api/[controller]")]
+
+[BasicAuth]
 public class AuthorController : ControllerBase
 {
     private AuthorCommandService _authorCommandService;

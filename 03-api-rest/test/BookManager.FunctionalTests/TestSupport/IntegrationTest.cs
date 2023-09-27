@@ -1,7 +1,5 @@
 ﻿using System.Reflection;
 using System.Text;
-using BookManager;
-using BookManager.Application;
 using BookManager.Persistance;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.TestHost;
@@ -9,7 +7,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Moq;
 
 namespace BookManager.IntegrationTests.TestSupport;
 public abstract class IntegrationTest
@@ -18,6 +15,8 @@ public abstract class IntegrationTest
     private readonly IServiceProvider _serviceProvider;
     private readonly string _uniqueDatabaseName;
     protected HttpClient HttpClient { get; }
+
+    protected string Token { get; set; } = string.Empty;
     protected IntegrationTest()
     {
         var server =
@@ -47,6 +46,12 @@ public abstract class IntegrationTest
             (sp, options) =>
             {
                 var configuration = sp.GetRequiredService<IConfiguration>();
+
+                var storedUsername = configuration.GetValue<string>("BasicAuthentication:Username");
+                var storedPassword = configuration.GetValue<string>("BasicAuthentication:Password");
+
+                Token = Base64Encode($"{storedUsername}:{storedPassword}");
+
                 var testConnectionString = configuration.GetValue<string>("ConnectionStrings:BooksDatabase");
                 var parts = testConnectionString!.Split(";");
                 var uniqueDbTestConnectionStringBuilder = new StringBuilder();
@@ -62,7 +67,11 @@ public abstract class IntegrationTest
                 options.UseSqlServer(uniqueDbTestConnectionString);
             });
     }
-
+    private static string Base64Encode(string plainText)
+    {
+        var plainTextBytes = Encoding.UTF8.GetBytes(plainText);
+        return Convert.ToBase64String(plainTextBytes);
+    }
     private void RemoveDependencyInjectionRegisteredService<TService>(IServiceCollection services)
     {
         var serviceDescriptor = services.SingleOrDefault(d => d.ServiceType == typeof(TService));

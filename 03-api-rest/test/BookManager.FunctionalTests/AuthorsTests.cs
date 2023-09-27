@@ -2,8 +2,8 @@
 using System.Net.Http.Json;
 using System.Text.Json;
 using FluentAssertions;
-using Microsoft.VisualStudio.TestPlatform.CommunicationUtilities;
 using BookManager.IntegrationTests.TestSupport;
+using System.Net.Http.Headers;
 
 namespace Book.IntegrationTests;
 public class MessagesTests
@@ -16,7 +16,11 @@ public class MessagesTests
 
        var newAuthor = new AuthorModel { CountryCode = "HN", FirstName="TestName", LastName = "TestLastName" };
 
-         var createAuthorResponse = await HttpClient.PostAsJsonAsync($"api/Author", newAuthor);
+
+       HttpClient.DefaultRequestHeaders.Authorization
+                            = new AuthenticationHeaderValue("Basic", Token);
+
+        var createAuthorResponse = await HttpClient.PostAsJsonAsync($"api/Author", newAuthor);
 
         if (!createAuthorResponse.IsSuccessStatusCode)
         {
@@ -58,6 +62,9 @@ public class MessagesTests
         };
 
         var newAuthor = new AuthorModel { CountryCode = "HN", FirstName = "TestName", LastName = "TestLastName", Books = books };
+
+       HttpClient.DefaultRequestHeaders.Authorization
+                            = new AuthenticationHeaderValue("Basic", Token);
 
         var createAuthorResponse = await HttpClient.PostAsJsonAsync($"api/Author", newAuthor);
 

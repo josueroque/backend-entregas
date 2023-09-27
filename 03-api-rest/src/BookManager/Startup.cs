@@ -20,6 +20,7 @@ public class Startup
             _configuration.GetValue<string>("ConnectionStrings:BooksDatabase");
 
         services
+   
             .AddDbContext<BookDbContext>(options =>
             {
                 options.UseSqlServer(booksConnectionString);
@@ -30,7 +31,9 @@ public class Startup
             .AddTransient<AuthorQueryService>()
             .AddScoped<IBookDbContext, BookDbContext>()
             .AddOpenApi()
+            
             .AddControllers();
+
     }
 
 
