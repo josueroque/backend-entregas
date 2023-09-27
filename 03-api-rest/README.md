@@ -3,6 +3,7 @@
 ## Tecnologias 
 
 Este proyecto fue creado usando las siguientes tecnologias:  
+
 • .Net Core 7.0  
 • SQl Server 2019  
 • Entity Framerwork Core  
